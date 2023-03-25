@@ -14,7 +14,7 @@ const mainProject = () => {
 const getWordCount = () => {
   const textInput = document.getElementById('textInput').value
   const textSplit = textInput.split(' ')
-  console.log('textSplit', textSplit)
+
   return textSplit
 }
 
@@ -26,7 +26,6 @@ const vowelFinder = (wordArray) => {
   splitWords.forEach((letter) => {
     if (vowels.includes(letter)) {
       vowelArray.push(letter)
-      console.log(vowelArray, 'vowelArray')
     }
   })
 
