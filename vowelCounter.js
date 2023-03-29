@@ -2,8 +2,13 @@ const inputButton = document.getElementById('inputButton')
 const submitButton = document.getElementById('submitButton')
 const wordCountDisplay = document.getElementById('wordCount')
 const vowelCountDisplay = document.getElementById('vowelCount')
+const resetButton = document.getElementById('reset')
 
 const mainProject = () => {
+  if (document.getElementById('textInput').value.trim() === '') {
+    document.getElementById('textInput').value = ''
+    return
+  }
   const wordCount = getWordCount()
   const vowelCount = vowelFinder(wordCount)
   const display = updateDisplay(wordCount, vowelCount)
@@ -12,16 +17,17 @@ const mainProject = () => {
 }
 
 const getWordCount = () => {
-  const textInput = document.getElementById('textInput').value
+  const textInput = document.getElementById('textInput').value.trim()
   const textSplit = textInput.split(' ')
+  const filteredText = textSplit.filter((word) => word !== '')
 
-  return textSplit
+  return filteredText
 }
 
 const vowelFinder = (wordArray) => {
-  const vowelArray = []
   const vowels = ['a', 'e', 'i', 'o', 'u']
-  const splitWords = wordArray.toString().split('')
+  const splitWords = wordArray.toString().toLowerCase().split('')
+  const vowelArray = splitWords.filter((word) => vowels.includes(word))
 
   splitWords.forEach((letter) => {
     if (vowels.includes(letter)) {
@@ -37,4 +43,10 @@ const updateDisplay = (wordCount, vowelCount) => {
   vowelCountDisplay.textContent = vowelCount.length
 }
 
+const resetDisplay = () => {
+  wordCountDisplay.textContent = ''
+  vowelCountDisplay.textContent = ''
+}
+
 inputButton.addEventListener('click', mainProject)
+resetButton.addEventListener('click', resetDisplay)
