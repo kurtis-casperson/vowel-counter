@@ -22,7 +22,7 @@ body {
   padding: 5px;
 }
 
-.word-box #inputButton {
+.buttons #inputButton {
   display: flex;
   background-color: #04aa6d;
   border: none;
@@ -31,19 +31,20 @@ body {
   cursor: pointer;
 }
 
-.resetButton {
+.buttons {
   display: flex;
   justify-content: center;
   align-items: center;
-
+  flex-direction: row;
   margin-top: 30px;
 }
 
-.resetButton #reset {
+.buttons #reset {
   background-color: hwb(43 20% 5%);
   border: none;
   color: white;
   padding: 5px 15px;
+  margin-left: 20px;
   cursor: pointer;
 }
 
