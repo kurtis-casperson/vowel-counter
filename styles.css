@@ -31,16 +31,20 @@ body {
   cursor: pointer;
 }
 
-#reset {
+.reset {
   display: flex;
-  align-items: center;
   justify-content: center;
-  background-color: hsl(43, 83%, 45%);
+  align-items: center;
+  /* background-color: hsl(43, 83%, 45%); */
   border: none;
   color: white;
   margin-top: 30px;
   padding: 5px 15px;
   cursor: pointer;
+}
+
+.reset #reset {
+  background-color: hwb(43 20% 5%);
 }
 
 .count-display {
