@@ -31,6 +31,18 @@ body {
   cursor: pointer;
 }
 
+#reset {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: hsl(43, 83%, 45%);
+  border: none;
+  color: white;
+  margin-top: 30px;
+  padding: 5px 15px;
+  cursor: pointer;
+}
+
 .count-display {
   font-family: 'Andale Mono', Courier, monospace, sans-serif;
 
